@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Break-even: Base gas vs XNO per call</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;background:#fff}
+label{display:block;margin:.5rem 0}input{font:inherit;padding:.3rem;width:10rem}pre{background:#f4f4f4;padding:1rem;overflow:auto}
+@media(prefers-color-scheme:dark){body{background:#111;color:#eee}pre{background:#222}}</style></head><body>
+<h1>Base USDC gas or XNO: which is cheaper per call?</h1>
+<p>Gas on Base is a flat cost per payment. Swapping into XNO costs a share of what you swap, once, then each call is feeless. So XNO wins at small prices and loses at large ones. Enter your numbers.</p>
+<label>Price per call (USD) <input id="p" value="0.01" type="number" step="any"></label>
+<label>Calls paid from one float <input id="n" value="5000" type="number"></label>
+<label>Gas per Base payment (USD) <input id="g" value="0.001856" type="number" step="any"></label>
+<label>Seller cash-out cost on the XNO route (%) <input id="c" value="0" type="number" step="any"></label>
+<pre id="out"></pre>
+<p>Gas default: median of 15 recent USDC payments on Base, read 2026-11-02T11:40:15Z (ETH at $2282.41). Swap spread: Nanswap USDC-Base to XNO quotes measured 2026-11-02T09:10Z, interpolated by float size. Not advice; excludes facilitator fees and your time. Source and tests: <code>breakeven.py</code>, <code>test_breakeven.py</code>, <code>test_breakeven.js</code> in xno-offramp-costs.</p>
+<script>
+// Same arithmetic as breakeven.py (tested against it by test_breakeven.js). No network.
+const CURVE = [[1, 7.52], [10, 1.78], [100, 1.02], [1000, 0.96]]; // [usd_in, spread % vs CoinGecko], Nanswap USDC-BASE -> XNO, measured 2026-11-02T09:10Z
+function spreadPct(F){ if(F<=CURVE[0][0])return CURVE[0][1]; const L=CURVE[CURVE.length-1]; if(F>=L[0])return L[1];
+  for(let i=0;i<CURVE.length-1;i++){const [a,ca]=CURVE[i],[b,cb]=CURVE[i+1]; if(a<=F&&F<=b){const t=(Math.log(F)-Math.log(a))/(Math.log(b)-Math.log(a));return ca+t*(cb-ca);}} }
+function perCall(price,calls,gas,cashOutPct=0){ const F=price*calls,s=spreadPct(F),xno=price*(s+cashOutPct)/100+gas/calls;
+  return {float_usd:F,spread_pct:s,base_usd_per_call:gas,xno_usd_per_call:xno,cheaper:xno<gas?"xno":"base"}; }
+function breakEvenPrice(calls,gas,cashOutPct=0){ let lo=1e-6,hi=1e5; const f=p=>perCall(p,calls,gas,cashOutPct).xno_usd_per_call-gas;
+  if(f(lo)>=0)return null; if(f(hi)<0)return hi; for(let i=0;i<200;i++){const m=Math.sqrt(lo*hi); if(f(m)<0)lo=m; else hi=m;} return lo; }
+if(typeof module!=="undefined")module.exports={perCall,breakEvenPrice,spreadPct};
+
+function show(){const p=+document.getElementById("p").value,n=+document.getElementById("n").value,g=+document.getElementById("g").value,c=+document.getElementById("c").value;
+ if(!(p>0&&n>=1&&g>=0)){document.getElementById("out").textContent="enter price > 0, calls >= 1, gas >= 0";return;}
+ const r=perCall(p,n,g,c),be=breakEvenPrice(n,g,c);
+ document.getElementById("out").textContent="float $"+r.float_usd.toFixed(2)+", swap spread "+r.spread_pct.toFixed(2)+"%\nBase: $"+g.toFixed(6)+" per call ("+(100*g/p).toFixed(2)+"% of price)\nXNO : $"+r.xno_usd_per_call.toFixed(6)+" per call ("+(100*r.xno_usd_per_call/p).toFixed(2)+"% of price)\ncheaper: "+r.cheaper+"; XNO is cheaper below about "+(be?"$"+be.toFixed(4):"no price")+" per call at this float size";}
+for(const i of ["p","n","g","c"])document.getElementById(i).oninput=show;show();
+</script></body></html>

@@ -1,0 +1,10 @@
+{
+ "gas_usd": 0.0018557189333716511,
+ "samples": 15,
+ "min_usd": 0.0005527668561865135,
+ "max_usd": 0.001977118501286064,
+ "eth_usd": 2282.415,
+ "block": 53415118,
+ "read_utc": "2026-11-02T11:40:15Z",
+ "method": "median of 15 recent USDC transfer/transferWithAuthorization txs on Base: gasUsed*effectiveGasPrice + l1Fee, ETH at Coinbase spot"
+}

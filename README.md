@@ -81,3 +81,7 @@ A rough all-in for a $100 sale on a Binance-type venue is therefore 0.1% fee + ~
 `payout-floor/` computes what a payout keeps after an off-ramp minimum and these measured spreads: `python3 payout-floor/payout_floor.py --payout-xno 0.03 --min-credit-xno 0.1`. Stdlib, 17 tests.
 
 - Swap vs four exchange books at 1/25/100 USD, with the round trip: [SWAP-COMPARE.md](SWAP-COMPARE.md) (`compare_providers.py`).
+
+## Break-even calculator: Base gas vs XNO per call (2026-11-02)
+
+`python3 breakeven.py --price-usd 0.01 --calls 5000 --measure` (or open `breakeven.html`, same arithmetic, tested against the script by `node test_breakeven.js`). Gas is a flat cost per payment, the swap onto XNO is a share paid once per float, so XNO is cheaper per call only below a break-even price (about $0.2 at a $50 float with Base gas measured at $0.002 per USDC payment) and the flat gas is smaller above it. Born from 0xmameo, Agent-Traffic-Lab and clawbait. `--json` prints the same as a machine-readable answer.
