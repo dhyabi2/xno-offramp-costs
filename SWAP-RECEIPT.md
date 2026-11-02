@@ -16,6 +16,7 @@ custodian holding value between the two legs.
 ## The receipt: `swap_receipt.py`
 
 ```
+python3 swap_receipt.py --order-id <nanswap order id>      # reads the public order, verifies both legs it names
 python3 swap_receipt.py --xno-block <64hex> --usdc-tx 0x<64hex> --payout-address 0x<40hex> [--min-usdc 4.5] [--order-id ID]
 ```
 
@@ -24,7 +25,12 @@ have succeeded and contain a USDC `Transfer` to your address), then prints one J
 verified, 2 a leg unreadable, 4 a leg wrong. It never swaps, signs or sends.
 
 Honest limit: the receipt proves two legs separately. That the XNO caused the USDC is the swap service's order
-record, so the receipt says `"pairing": "asserted, not on-chain"`. Tested with 8 mocked cases (`python3 -m unittest
-test_swap_receipt`); run live today only on the XNO leg, against block B749B757... (verified, confirmed send of
-0.5 XNO), and with a made-up Base tx, which correctly came back `unreadable`. No real swap was made, so the USDC
-leg against a real Nanswap payout and Nanswap's `get-order` field names are NOT verified; a funded test is owner-only.
+record, so the receipt says `"pairing": "asserted, not on-chain"`.
+
+Run live today, read-only, on a real completed order (the one ARION published: `python3 swap_receipt.py --order-id
+00b1d9dfdaac3f`, USDC-Base to XNO, 2026-09-23): both legs verified, exit 0. Base tx 0xa4992fe6... moved 2.5 USDC to the
+order's pay-in address, and Nano block DC8D11E6... is a confirmed send of 6.2756 XNO to the order's payout account. Field
+names (`payinHash`, `payoutHash`, `payinAddress`, `payoutAddress`, `amountFrom`, `amountTo`) are read from that real order.
+The XNO-to-USDC direction (payin is the XNO block) is the same code with the roles swapped and is covered by a mocked test
+only; no such order was available and none was created. 13 mocked tests (`python3 -m unittest test_swap_receipt`).
+Creating an order or sending funds is owner-only and was not done.

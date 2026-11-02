@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """swap_receipt: pair an XNO send block with a USDC-on-Base transfer into one receipt. Read-only.
 
+    python3 swap_receipt.py --order-id ID      (reads a public Nanswap order and verifies both legs it names)
     python3 swap_receipt.py --xno-block HASH --usdc-tx 0x.. --payout-address 0x.. [--min-usdc 4.5] [--order-id ID]
 
 It never swaps, signs or sends. It asks one Nano node for block_info and one Base node for the transaction
@@ -84,14 +85,60 @@ def receipt(xno_block, usdc_tx, payout, min_usdc=None, order_id=None, post=post)
             if order_id else None}
 
 
+ORDER_API = "https://api.nanswap.com/get-order?id="
+
+
+def get_json(url, timeout=20):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
+
+def receipt_from_order(order_id, post=post, get=get_json):
+    """Read a Nanswap order (public, read-only) and verify BOTH legs it names. Works in either direction.
+    Field names are those of a real completed order (id 00b1d9dfdaac3f, USDC-Base to XNO, 2026-09-23); the XNO to
+    USDC direction is assumed symmetric (payinHash = the XNO send block, payoutHash = the Base tx) and is untested live."""
+    try:
+        o = get(ORDER_API + order_id)
+    except Exception as e:
+        return {"v": "xno-usdc-swap-receipt-v1", "verdict": "unknown", "why": f"order unreadable: {type(e).__name__}"}
+    if not isinstance(o, dict) or o.get("error") or o.get("status") != "completed":
+        return {"v": "xno-usdc-swap-receipt-v1", "verdict": "unknown", "order_id": order_id,
+                "why": "order is missing or not completed: %s" % (o.get("error") or o.get("status") if isinstance(o, dict) else "bad reply")}
+    if str(o.get("from", "")).lower() == "xno":
+        xno_block, usdc_tx, usdc_to, direction = o.get("payinHash"), o.get("payoutHash"), o.get("payoutAddress"), "xno->usdc"
+        min_usdc = o.get("amountTo")
+    else:
+        xno_block, usdc_tx, usdc_to, direction = o.get("payoutHash"), o.get("payinHash"), o.get("payinAddress"), "usdc->xno"
+        min_usdc = o.get("amountFrom")
+    r = receipt(xno_block or "", usdc_tx or "", usdc_to or "", None, order_id, post)
+    r["direction"] = direction
+    r["order"] = {k: o.get(k) for k in ("id", "from", "fromNetwork", "to", "amountFrom", "amountTo", "payinHash",
+                                         "payoutHash", "payinAddress", "payoutAddress", "createdAt", "updatedAt")}
+    leg = r["usdc_leg"]
+    if leg.get("ok") and min_usdc is not None and leg["usdc"] + 1e-6 < float(min_usdc):
+        leg["ok"], leg["state"], leg["why"] = False, "wrong", "USDC moved is below the order's own amount"
+        r["verdict"] = "wrong"
+    if direction == "usdc->xno" and r["xno_leg"].get("ok") and r["xno_leg"].get("destination") != o.get("payoutAddress"):
+        r["xno_leg"]["ok"], r["xno_leg"]["state"] = False, "wrong"
+        r["verdict"] = "wrong"
+    return r
+
+
 def main(argv=None, post=post):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("--xno-block", required=True)
-    p.add_argument("--usdc-tx", required=True)
-    p.add_argument("--payout-address", required=True)
+    p.add_argument("--xno-block")
+    p.add_argument("--usdc-tx")
+    p.add_argument("--payout-address")
     p.add_argument("--min-usdc", type=float)
     p.add_argument("--order-id")
     a = p.parse_args(argv)
+    if a.order_id and not a.xno_block:
+        r = receipt_from_order(a.order_id, post)
+        print(json.dumps(r, indent=2))
+        return {"verified": 0, "unknown": 2, "wrong": 4}[r["verdict"]]
+    if not (a.xno_block and a.usdc_tx and a.payout_address):
+        p.error("give --order-id, or all of --xno-block --usdc-tx --payout-address")
     r = receipt(a.xno_block, a.usdc_tx, a.payout_address, a.min_usdc, a.order_id, post)
     print(json.dumps(r, indent=2))
     return {"verified": 0, "unknown": 2, "wrong": 4}[r["verdict"]]

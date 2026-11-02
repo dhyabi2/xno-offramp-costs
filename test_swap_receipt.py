@@ -58,5 +58,34 @@ class T(unittest.TestCase):
         self.assertEqual(sr.receipt(BLK, TX, ME, None, None, fake(NANO, b))["verdict"], "wrong")
 
 
+class Order(unittest.TestCase):
+    ORDER = {"id": "o1", "from": "usdc", "fromNetwork": "base", "to": "XNO", "status": "completed", "amountFrom": 2.5,
+             "amountTo": 6.2, "payinHash": TX, "payoutHash": BLK, "payinAddress": ME, "payoutAddress": "nano_b"}
+
+    def run_order(self, order, nano=NANO, b=None):
+        return sr.receipt_from_order("o1", fake(nano, b or base(amount=2_500_000, to=ME)), get=lambda u: order)
+
+    def test_usdc_to_xno_order_verifies_both_legs(self):
+        r = self.run_order(self.ORDER)
+        self.assertEqual((r["verdict"], r["direction"]), ("verified", "usdc->xno"))
+
+    def test_order_not_completed_is_unknown(self):
+        self.assertEqual(self.run_order(dict(self.ORDER, status="waiting"))["verdict"], "unknown")
+        self.assertEqual(self.run_order({"error": "Transaction doesn't exist"})["verdict"], "unknown")
+
+    def test_usdc_below_order_amount_is_wrong(self):
+        self.assertEqual(self.run_order(self.ORDER, b=base(amount=1_000_000, to=ME))["verdict"], "wrong")
+
+    def test_xno_paid_to_a_different_account_than_the_order_says_is_wrong(self):
+        nano = dict(NANO, contents={"link_as_account": "nano_other"})
+        self.assertEqual(self.run_order(self.ORDER, nano=nano)["verdict"], "wrong")
+
+    def test_xno_to_usdc_direction_swaps_roles(self):
+        o = dict(self.ORDER, **{"from": "XNO", "to": "usdc", "payinHash": BLK, "payoutHash": TX, "payoutAddress": ME,
+                                "amountTo": 2.5})
+        r = self.run_order(o)
+        self.assertEqual((r["verdict"], r["direction"]), ("verified", "xno->usdc"))
+
+
 if __name__ == "__main__":
     unittest.main()
