@@ -1,0 +1,246 @@
+{
+ "measured_at": "2026-11-02T09:41Z",
+ "coingecko_xno_usd": 0.323061,
+ "binance_mid": 0.3175,
+ "kucoin_mid": 0.31755,
+ "swap": [
+  {
+   "route": "Nanswap USDC-BASE->XNO",
+   "usd_in": 1,
+   "limits": {
+    "min": 0.132726,
+    "max": 3216.8546024611082
+   },
+   "xno": 2.8796912150687044,
+   "cost_pct_vs_coingecko": 6.97,
+   "cost_pct_vs_binance_mid": 8.57
+  },
+  {
+   "route": "Nanswap USDC-BASE->XNO",
+   "usd_in": 5,
+   "limits": {
+    "min": 0.132726,
+    "max": 3216.8546024611082
+   },
+   "xno": 15.150625289485872,
+   "cost_pct_vs_coingecko": 2.11,
+   "cost_pct_vs_binance_mid": 3.79
+  },
+  {
+   "route": "Nanswap USDC-BASE->XNO",
+   "usd_in": 25,
+   "limits": {
+    "min": 0.132726,
+    "max": 3216.8546024611082
+   },
+   "xno": 76.50530183727034,
+   "cost_pct_vs_coingecko": 1.14,
+   "cost_pct_vs_binance_mid": 2.84
+  },
+  {
+   "route": "Nanswap USDC-BASE->XNO",
+   "usd_in": 100,
+   "limits": {
+    "min": 0.132726,
+    "max": 3216.8546024611082
+   },
+   "xno": 307.1465184498996,
+   "cost_pct_vs_coingecko": 0.77,
+   "cost_pct_vs_binance_mid": 2.48
+  },
+  {
+   "route": "Nanswap USDT-BSC->XNO",
+   "usd_in": 1,
+   "limits": {
+    "min": 0.248062,
+    "max": 3413.21391635578
+   },
+   "xno": 2.7140250115794347,
+   "cost_pct_vs_coingecko": 12.32,
+   "cost_pct_vs_binance_mid": 13.83
+  },
+  {
+   "route": "Nanswap USDT-BSC->XNO",
+   "usd_in": 5,
+   "limits": {
+    "min": 0.248062,
+    "max": 3413.21391635578
+   },
+   "xno": 14.963226802532036,
+   "cost_pct_vs_coingecko": 3.32,
+   "cost_pct_vs_binance_mid": 4.98
+  },
+  {
+   "route": "Nanswap USDT-BSC->XNO",
+   "usd_in": 25,
+   "limits": {
+    "min": 0.248062,
+    "max": 3413.21391635578
+   },
+   "xno": 76.20923575729505,
+   "cost_pct_vs_coingecko": 1.52,
+   "cost_pct_vs_binance_mid": 3.21
+  },
+  {
+   "route": "Nanswap USDT-BSC->XNO",
+   "usd_in": 100,
+   "limits": {
+    "min": 0.248062,
+    "max": 3413.21391635578
+   },
+   "xno": 306.83958622819205,
+   "cost_pct_vs_coingecko": 0.87,
+   "cost_pct_vs_binance_mid": 2.58
+  },
+  {
+   "route": "Nanswap USDC-SOL->XNO",
+   "usd_in": 1,
+   "limits": {
+    "min": 0.6513061,
+    "max": 4291.962156339014
+   },
+   "xno": 2.1583480006175697,
+   "cost_pct_vs_coingecko": 30.27,
+   "cost_pct_vs_binance_mid": 31.47
+  },
+  {
+   "route": "Nanswap USDC-SOL->XNO",
+   "usd_in": 5,
+   "limits": {
+    "min": 0.6513061,
+    "max": 4291.962156339014
+   },
+   "xno": 14.429976841130152,
+   "cost_pct_vs_coingecko": 6.76,
+   "cost_pct_vs_binance_mid": 8.37
+  },
+  {
+   "route": "Nanswap USDC-SOL->XNO",
+   "usd_in": 25,
+   "limits": {
+    "min": 0.6513061,
+    "max": 4291.962156339014
+   },
+   "xno": 75.78811486799444,
+   "cost_pct_vs_coingecko": 2.06,
+   "cost_pct_vs_binance_mid": 3.75
+  },
+  {
+   "route": "Nanswap USDC-SOL->XNO",
+   "usd_in": 100,
+   "limits": {
+    "min": 0.6513061,
+    "max": 4291.962156339014
+   },
+   "xno": 307.1465184498996,
+   "cost_pct_vs_coingecko": 0.77,
+   "cost_pct_vs_binance_mid": 2.48
+  }
+ ],
+ "book": [
+  {
+   "route": "Binance XNO/USDT",
+   "usd_in": 1,
+   "needs_account": true,
+   "xno_before_fee": 3.144654088050314,
+   "slippage_pct_vs_mid": 0.157,
+   "taker_fee_pct": 0.1,
+   "all_in_pct_excl_deposit_and_withdrawal": 0.257
+  },
+  {
+   "route": "Binance XNO/USDT",
+   "usd_in": 5,
+   "needs_account": true,
+   "xno_before_fee": 15.723270440251572,
+   "slippage_pct_vs_mid": 0.157,
+   "taker_fee_pct": 0.1,
+   "all_in_pct_excl_deposit_and_withdrawal": 0.257
+  },
+  {
+   "route": "Binance XNO/USDT",
+   "usd_in": 25,
+   "needs_account": true,
+   "xno_before_fee": 78.61635220125785,
+   "slippage_pct_vs_mid": 0.157,
+   "taker_fee_pct": 0.1,
+   "all_in_pct_excl_deposit_and_withdrawal": 0.257
+  },
+  {
+   "route": "Binance XNO/USDT",
+   "usd_in": 100,
+   "needs_account": true,
+   "xno_before_fee": 314.4654088050314,
+   "slippage_pct_vs_mid": 0.157,
+   "taker_fee_pct": 0.1,
+   "all_in_pct_excl_deposit_and_withdrawal": 0.257
+  },
+  {
+   "route": "KuCoin XNO/USDT",
+   "usd_in": 1,
+   "needs_account": true,
+   "xno_before_fee": 3.1357792411414236,
+   "slippage_pct_vs_mid": 0.423,
+   "taker_fee_pct": null,
+   "all_in_pct_excl_deposit_and_withdrawal": null
+  },
+  {
+   "route": "KuCoin XNO/USDT",
+   "usd_in": 5,
+   "needs_account": true,
+   "xno_before_fee": 15.678896205707117,
+   "slippage_pct_vs_mid": 0.423,
+   "taker_fee_pct": null,
+   "all_in_pct_excl_deposit_and_withdrawal": null
+  },
+  {
+   "route": "KuCoin XNO/USDT",
+   "usd_in": 25,
+   "needs_account": true,
+   "xno_before_fee": 78.39448102853558,
+   "slippage_pct_vs_mid": 0.423,
+   "taker_fee_pct": null,
+   "all_in_pct_excl_deposit_and_withdrawal": null
+  },
+  {
+   "route": "KuCoin XNO/USDT",
+   "usd_in": 100,
+   "needs_account": true,
+   "xno_before_fee": 313.5779241141423,
+   "slippage_pct_vs_mid": 0.423,
+   "taker_fee_pct": null,
+   "all_in_pct_excl_deposit_and_withdrawal": null
+  }
+ ],
+ "not_available": [
+  {
+   "service": "SideShift",
+   "url": "https://sideshift.ai/api/v2/pair/usdc-base/xno",
+   "answer": "HTTPError: HTTP Error 400: Bad Request"
+  },
+  {
+   "service": "ChangeNOW",
+   "url": "https://api.changenow.io/v1/exchange-amount/25/usdcbase_xno",
+   "answer": "HTTPError: HTTP Error 400: Bad Request"
+  },
+  {
+   "service": "SimpleSwap",
+   "url": "https://api.simpleswap.io/v1/get_estimated?fixed=false&currency_from=usdcbase&currency_to=xno&amount=25",
+   "answer": "HTTPError: HTTP Error 401: Unauthorized"
+  },
+  {
+   "service": "Exolix",
+   "url": "https://api.exolix.com/api/v2/rate?coinFrom=USDC&networkFrom=BASE&coinTo=XNO&networkTo=XNO&amount=25&rateType=float",
+   "answer": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "service": "Gate",
+   "url": "https://api.gateio.ws/api/v4/spot/order_book?currency_pair=XNO_USDT",
+   "answer": "HTTPError: HTTP Error 400: Bad Request"
+  },
+  {
+   "service": "Kraken",
+   "url": "https://api.kraken.com/0/public/Depth?pair=XNOUSD",
+   "answer": "{\"error\":[\"EQuery:Unknown asset pair\"]}"
+  }
+ ]
+}

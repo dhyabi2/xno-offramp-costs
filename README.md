@@ -4,6 +4,8 @@ What it really costs to turn XNO into USDC/credits (and back), measured on **202
 
 **Not advice, not an endorsement.** Nothing here says any service is safe, solvent or available in your jurisdiction. Swap services and exchanges hold your funds in transit (custody) and exchanges usually need an account and identity checks; this page does not evaluate that.
 
+**Getting onto XNO** (USDC -> XNO at $1/$5/$25/$100, why the spread is paid once): [GETTING-ONTO-XNO.md](GETTING-ONTO-XNO.md). Into-XNO round trip and monthly arithmetic: [ONRAMP.md](ONRAMP.md).
+
 ## 1. Swap service quote: Nanswap (public API, no account)
 
 Quotes from `https://api.nanswap.com/get-estimate` (2026-11-02T06:10Z). Reference price: CoinGecko XNO = $0.325352 (`https://api.coingecko.com/api/v3/simple/price?ids=nano&vs_currencies=usd`); Binance book mid at the same time = $0.3205 (so the two references differ by 1.51%; both are shown). "Cost" = value lost against the reference, including the service spread and whatever network cost is built into the quote. Nanswap's FAQ says network costs for non-Nano assets are "included in the estimated price" and gives no percentage fee (https://nanswap.com/faq, fetched 2026-11-02).
