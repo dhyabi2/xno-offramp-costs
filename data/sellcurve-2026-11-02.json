@@ -1,0 +1,63 @@
+{
+ "mid_usd": 0.322136,
+ "mid_read_at": "2026-11-02T09:17:10Z",
+ "mid_source": "https://api.coingecko.com/api/v3/simple/price?ids=nano&vs_currencies=usd",
+ "rows": [
+  {
+   "side": "sell",
+   "xno": 10,
+   "usdc_out": 2.842237,
+   "kept_of_mid_pct": 88.23,
+   "err": null,
+   "at": "2026-11-02T09:17:13Z"
+  },
+  {
+   "side": "sell",
+   "xno": 50,
+   "usdc_out": 15.187381,
+   "kept_of_mid_pct": 94.29,
+   "err": null,
+   "at": "2026-11-02T09:17:14Z"
+  },
+  {
+   "side": "sell",
+   "xno": 250,
+   "usdc_out": 77.004936,
+   "kept_of_mid_pct": 95.62,
+   "err": null,
+   "at": "2026-11-02T09:17:14Z"
+  },
+  {
+   "side": "sell",
+   "xno": 1000,
+   "usdc_out": 308.799576,
+   "kept_of_mid_pct": 95.86,
+   "err": null,
+   "at": "2026-11-02T09:17:15Z"
+  },
+  {
+   "side": "buy",
+   "usdc": 1,
+   "xno_out": 2.8745098039215686,
+   "kept_of_mid_pct": 92.6,
+   "err": null,
+   "at": "2026-11-02T09:17:16Z"
+  },
+  {
+   "side": "buy",
+   "usdc": 5,
+   "xno_out": 15.145434614790796,
+   "kept_of_mid_pct": 97.58,
+   "err": null,
+   "at": "2026-11-02T09:17:17Z"
+  },
+  {
+   "side": "buy",
+   "usdc": 25,
+   "xno_out": 76.50006484483556,
+   "kept_of_mid_pct": 98.57,
+   "err": null,
+   "at": "2026-11-02T09:17:18Z"
+  }
+ ]
+}
