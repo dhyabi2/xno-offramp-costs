@@ -7,7 +7,7 @@ PTS, _, LIM = b.curve()
 class Breakeven(unittest.TestCase):
     def test_curve_is_the_measured_table(self):
         self.assertEqual([p[0] for p in PTS], [1, 10, 100, 1000])
-        self.assertEqual(b.spread_pct(10, PTS), 1.78)
+        self.assertAlmostEqual(b.spread_pct(10, PTS), 1.78, places=9)
         self.assertEqual(b.spread_pct(0.01, PTS), PTS[0][1])      # clamped, flagged in notes
         self.assertEqual(b.spread_pct(1e6, PTS), PTS[-1][1])
         self.assertTrue(PTS[1][1] > b.spread_pct(30, PTS) > PTS[2][1])
