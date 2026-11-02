@@ -35,5 +35,5 @@ So within minutes the estimate is nearly flat: the $10 quote moved by at most 0.
 
 ## 4. What to do with that
 - Treat the number from `get-estimate` as the best case, not the contract. For a sized swap, create the order and compare `expectedAmountTo` with `amountTo` after it completes; `swap_receipt.py --order-id` prints the difference as `quote_vs_delivered_pct`.
-- Nano-to-Nano-family pairs are described as handled entirely by Nanswap in about a second ("feeless" on both sides); pairs through USDC-Base go through partners with a longer duration, which is where the drift lives.
+- Pairs where both coins are `feeless` (the field in `/all-currencies`) are described as handled entirely by Nanswap in under a second; pairs through USDC-Base go through partners with a longer duration, which is where the drift lives.
 - We have created no order (that spends money; owner-only). Until several finished public orders are read, "-15% on one" is the only settled-versus-quoted figure we have; more public order ids would let this page say a distribution.
