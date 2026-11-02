@@ -1,0 +1,93 @@
+{
+ "measured_at": "2026-11-02T06:11Z",
+ "venues": {
+  "binance": {
+   "source": "https://api.binance.com/api/v3/depth?symbol=XNOUSDT&limit=100",
+   "best_bid": 0.32,
+   "best_ask": 0.321,
+   "mid": 0.3205,
+   "spread_pct": 0.313,
+   "sells": [
+    {
+     "size_usd_at_mid": 1,
+     "xno_sold": 3.1201,
+     "filled": true,
+     "usdt_received": 0.9984,
+     "slippage_vs_mid_pct": 0.156
+    },
+    {
+     "size_usd_at_mid": 5,
+     "xno_sold": 15.6006,
+     "filled": true,
+     "usdt_received": 4.9922,
+     "slippage_vs_mid_pct": 0.156
+    },
+    {
+     "size_usd_at_mid": 25,
+     "xno_sold": 78.0031,
+     "filled": true,
+     "usdt_received": 24.961,
+     "slippage_vs_mid_pct": 0.156
+    },
+    {
+     "size_usd_at_mid": 100,
+     "xno_sold": 312.0125,
+     "filled": true,
+     "usdt_received": 99.844,
+     "slippage_vs_mid_pct": 0.156
+    },
+    {
+     "size_usd_at_mid": 250,
+     "xno_sold": 780.0312,
+     "filled": true,
+     "usdt_received": 249.61,
+     "slippage_vs_mid_pct": 0.156
+    }
+   ]
+  },
+  "kucoin": {
+   "source": "https://api.kucoin.com/api/v1/market/orderbook/level2_100?symbol=XNO-USDT",
+   "best_bid": 0.3197,
+   "best_ask": 0.3222,
+   "mid": 0.32095,
+   "spread_pct": 0.782,
+   "sells": [
+    {
+     "size_usd_at_mid": 1,
+     "xno_sold": 3.1158,
+     "filled": true,
+     "usdt_received": 0.9961,
+     "slippage_vs_mid_pct": 0.389
+    },
+    {
+     "size_usd_at_mid": 5,
+     "xno_sold": 15.5788,
+     "filled": true,
+     "usdt_received": 4.9805,
+     "slippage_vs_mid_pct": 0.389
+    },
+    {
+     "size_usd_at_mid": 25,
+     "xno_sold": 77.8938,
+     "filled": true,
+     "usdt_received": 24.9026,
+     "slippage_vs_mid_pct": 0.389
+    },
+    {
+     "size_usd_at_mid": 100,
+     "xno_sold": 311.575,
+     "filled": true,
+     "usdt_received": 99.5704,
+     "slippage_vs_mid_pct": 0.43
+    },
+    {
+     "size_usd_at_mid": 250,
+     "xno_sold": 778.9375,
+     "filled": true,
+     "usdt_received": 248.3758,
+     "slippage_vs_mid_pct": 0.65
+    }
+   ]
+  }
+ }
+}

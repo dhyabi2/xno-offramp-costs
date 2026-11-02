@@ -1,0 +1,323 @@
+{
+ "measured_at": "2026-11-02T06:10Z",
+ "mid_price_usd_coingecko": 0.325352,
+ "source_mid": "https://api.coingecko.com/api/v3/simple/price?ids=nano&vs_currencies=usd",
+ "source_quotes": "https://api.nanswap.com/get-estimate (public, unauthenticated)",
+ "rows": [
+  {
+   "pair": "USDC-BASE",
+   "size_usd_at_mid": 1,
+   "out_xno_in": 3.0736,
+   "out_received_usd": 0.687714,
+   "out_err": null,
+   "out_cost_pct": 31.23,
+   "out_cost_usd": 0.3123,
+   "in_usd_in": 1,
+   "in_xno_received": 2.7816034994340946,
+   "in_err": null,
+   "in_cost_pct": 9.5,
+   "limits_out_xno": {
+    "min": 1.90063,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.1852361,
+    "max": 3299.1178158960297
+   }
+  },
+  {
+   "pair": "USDC-BASE",
+   "size_usd_at_mid": 5,
+   "out_xno_in": 15.368,
+   "out_received_usd": 4.518349,
+   "out_err": null,
+   "out_cost_pct": 9.63,
+   "out_cost_usd": 0.4817,
+   "in_usd_in": 5,
+   "in_xno_received": 14.9376586828179,
+   "in_err": null,
+   "in_cost_pct": 2.8,
+   "limits_out_xno": {
+    "min": 1.90063,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.1852361,
+    "max": 3299.1178158960297
+   }
+  },
+  {
+   "pair": "USDC-BASE",
+   "size_usd_at_mid": 25,
+   "out_xno_in": 76.8399,
+   "out_received_usd": 23.671497,
+   "out_err": null,
+   "out_cost_pct": 5.31,
+   "out_cost_usd": 1.3285,
+   "in_usd_in": 25,
+   "in_xno_received": 75.71793765868281,
+   "in_err": null,
+   "in_cost_pct": 1.46,
+   "limits_out_xno": {
+    "min": 1.90063,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.1852361,
+    "max": 3299.1178158960297
+   }
+  },
+  {
+   "pair": "USDC-BASE",
+   "size_usd_at_mid": 100,
+   "out_xno_in": 307.3594,
+   "out_received_usd": 95.639992,
+   "out_err": null,
+   "out_cost_pct": 4.36,
+   "out_cost_usd": 4.36,
+   "in_usd_in": 100,
+   "in_xno_received": 304.24092257807956,
+   "in_err": null,
+   "in_cost_pct": 1.01,
+   "limits_out_xno": {
+    "min": 1.90063,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.1852361,
+    "max": 3299.1178158960297
+   }
+  },
+  {
+   "pair": "USDC-BASE",
+   "size_usd_at_mid": 250,
+   "out_xno_in": 768.3985,
+   "out_received_usd": 239.489896,
+   "out_err": null,
+   "out_cost_pct": 4.2,
+   "out_cost_usd": 10.5101,
+   "in_usd_in": 250,
+   "in_xno_received": 760.9241075525373,
+   "in_err": null,
+   "in_cost_pct": 0.97,
+   "limits_out_xno": {
+    "min": 1.90063,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.1852361,
+    "max": 3299.1178158960297
+   }
+  },
+  {
+   "pair": "USDT-BSC",
+   "size_usd_at_mid": 1,
+   "out_xno_in": 3.0736,
+   "out_received_usd": 0.8412401,
+   "out_err": null,
+   "out_cost_pct": 15.88,
+   "out_cost_usd": 0.1588,
+   "in_usd_in": 1,
+   "in_xno_received": 2.6169587959988987,
+   "in_err": null,
+   "in_cost_pct": 14.86,
+   "limits_out_xno": {
+    "min": 0.79992,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.2979811,
+    "max": 3506.6802258302064
+   }
+  },
+  {
+   "pair": "USDT-BSC",
+   "size_usd_at_mid": 5,
+   "out_xno_in": 15.368,
+   "out_received_usd": 4.6696977,
+   "out_err": null,
+   "out_cost_pct": 6.61,
+   "out_cost_usd": 0.3303,
+   "in_usd_in": 5,
+   "in_xno_received": 14.751901134868922,
+   "in_err": null,
+   "in_cost_pct": 4.01,
+   "limits_out_xno": {
+    "min": 0.79992,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.2979811,
+    "max": 3506.6802258302064
+   }
+  },
+  {
+   "pair": "USDT-BSC",
+   "size_usd_at_mid": 25,
+   "out_xno_in": 76.8399,
+   "out_received_usd": 23.8119551,
+   "out_err": null,
+   "out_cost_pct": 4.75,
+   "out_cost_usd": 1.188,
+   "in_usd_in": 25,
+   "in_xno_received": 75.42661588816493,
+   "in_err": null,
+   "in_cost_pct": 1.84,
+   "limits_out_xno": {
+    "min": 0.79992,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.2979811,
+    "max": 3506.6802258302064
+   }
+  },
+  {
+   "pair": "USDT-BSC",
+   "size_usd_at_mid": 100,
+   "out_xno_in": 307.3594,
+   "out_received_usd": 95.8379,
+   "out_err": null,
+   "out_cost_pct": 4.16,
+   "out_cost_usd": 4.1621,
+   "in_usd_in": 100,
+   "in_xno_received": 303.96745281575966,
+   "in_err": null,
+   "in_cost_pct": 1.1,
+   "limits_out_xno": {
+    "min": 0.79992,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.2979811,
+    "max": 3506.6802258302064
+   }
+  },
+  {
+   "pair": "USDT-BSC",
+   "size_usd_at_mid": 250,
+   "out_xno_in": 768.3985,
+   "out_received_usd": 239.8348,
+   "out_err": null,
+   "out_cost_pct": 4.07,
+   "out_cost_usd": 10.1652,
+   "in_usd_in": 250,
+   "in_xno_received": 760.2398213575601,
+   "in_err": null,
+   "in_cost_pct": 1.06,
+   "limits_out_xno": {
+    "min": 0.79992,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.2979811,
+    "max": 3506.6802258302064
+   }
+  },
+  {
+   "pair": "USDC-SOL",
+   "size_usd_at_mid": 1,
+   "out_xno_in": 3.0736,
+   "out_received_usd": 0.619531,
+   "out_err": null,
+   "out_cost_pct": 38.05,
+   "out_cost_usd": 0.3805,
+   "in_usd_in": 1,
+   "in_xno_received": 2.0666085466948085,
+   "in_err": null,
+   "in_cost_pct": 32.76,
+   "limits_out_xno": {
+    "min": 5.97317,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.704301,
+    "max": 4440.530199305797
+   }
+  },
+  {
+   "pair": "USDC-SOL",
+   "size_usd_at_mid": 5,
+   "out_xno_in": 15.368,
+   "out_received_usd": 4.450389,
+   "out_err": null,
+   "out_cost_pct": 10.99,
+   "out_cost_usd": 0.5496,
+   "in_usd_in": 5,
+   "in_xno_received": 14.22336728763268,
+   "in_err": null,
+   "in_cost_pct": 7.45,
+   "limits_out_xno": {
+    "min": 5.97317,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.704301,
+    "max": 4440.530199305797
+   }
+  },
+  {
+   "pair": "USDC-SOL",
+   "size_usd_at_mid": 25,
+   "out_xno_in": 76.8399,
+   "out_received_usd": 23.604647,
+   "out_err": null,
+   "out_cost_pct": 5.58,
+   "out_cost_usd": 1.3954,
+   "in_usd_in": 25,
+   "in_xno_received": 75.00717322810559,
+   "in_err": null,
+   "in_cost_pct": 2.39,
+   "limits_out_xno": {
+    "min": 5.97317,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.704301,
+    "max": 4440.530199305797
+   }
+  },
+  {
+   "pair": "USDC-SOL",
+   "size_usd_at_mid": 100,
+   "out_xno_in": 307.3594,
+   "out_received_usd": 95.589992,
+   "out_err": null,
+   "out_cost_pct": 4.41,
+   "out_cost_usd": 4.41,
+   "in_usd_in": 100,
+   "in_xno_received": 304.24092257807956,
+   "in_err": null,
+   "in_cost_pct": 1.01,
+   "limits_out_xno": {
+    "min": 5.97317,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.704301,
+    "max": 4440.530199305797
+   }
+  },
+  {
+   "pair": "USDC-SOL",
+   "size_usd_at_mid": 250,
+   "out_xno_in": 768.3985,
+   "out_received_usd": 239.439896,
+   "out_err": null,
+   "out_cost_pct": 4.22,
+   "out_cost_usd": 10.5601,
+   "in_usd_in": 250,
+   "in_xno_received": 760.9241075525373,
+   "in_err": null,
+   "in_cost_pct": 0.97,
+   "limits_out_xno": {
+    "min": 5.97317,
+    "max": 9360.37441
+   },
+   "limits_in_usd": {
+    "min": 0.704301,
+    "max": 4440.530199305797
+   }
+  }
+ ]
+}
