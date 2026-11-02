@@ -67,6 +67,9 @@ A rough all-in for a $100 sale on a Binance-type venue is therefore 0.1% fee + ~
 4. **Do not convert overnight-by-habit.** Price risk on XNO is yours while you hold it; the order-book spread on the exchanges above was 0.313-0.782%, and XNO moved from $0.3205 (Binance) to $0.325352 (CoinGecko) between sources, so check a live quote right before swapping.
 5. **Check limits first** (min/max above) and re-quote: every number on this page is a snapshot.
 
+## The other direction
+[ONRAMP.md](ONRAMP.md): USDC/USDT -> XNO at $1, $10, $100, $1000 with round-trip loss and a swap-once-a-month calculation (measured 2026-11-02T09:10Z).
+
 ## Files
 - `data/nanswap-2026-11-02.json`, `data/depth-2026-11-02.json`, `data/kucoin-currency-XNO-2026-11-02.json` raw measurements
 - `measure.py`, `depth.py` re-run to refresh; `gen_readme.py` regenerates this page

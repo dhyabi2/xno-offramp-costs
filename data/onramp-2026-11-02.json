@@ -1,0 +1,158 @@
+{
+ "measured_at": "2026-11-02T09:10Z",
+ "mid_coingecko": 0.322243,
+ "binance_best_bid_ask": [
+  0.317,
+  0.318
+ ],
+ "binance_mid": 0.3175,
+ "nanswap": [
+  {
+   "pair": "USDC-BASE",
+   "usd_in": 1,
+   "xno_received": 2.8699891925274046,
+   "err": null,
+   "limits_in": {
+    "min": 0.14098,
+    "max": 3227.7292064304975
+   },
+   "buy_cost_pct_vs_cg": 7.52,
+   "buy_cost_pct_vs_binance_mid": 8.88,
+   "round_trip_usd_back": 0.637901,
+   "round_trip_loss_pct": 36.21
+  },
+  {
+   "pair": "USDC-BASE",
+   "usd_in": 10,
+   "xno_received": 30.479573876794813,
+   "err": null,
+   "limits_in": {
+    "min": 0.14098,
+    "max": 3227.7292064304975
+   },
+   "buy_cost_pct_vs_cg": 1.78,
+   "buy_cost_pct_vs_binance_mid": 3.23,
+   "round_trip_usd_back": 9.159008,
+   "round_trip_loss_pct": 8.41
+  },
+  {
+   "pair": "USDC-BASE",
+   "usd_in": 100,
+   "xno_received": 307.1465184498996,
+   "err": null,
+   "limits_in": {
+    "min": 0.14098,
+    "max": 3227.7292064304975
+   },
+   "buy_cost_pct_vs_cg": 1.02,
+   "buy_cost_pct_vs_binance_mid": 2.48,
+   "round_trip_usd_back": 94.66548,
+   "round_trip_loss_pct": 5.33
+  },
+  {
+   "pair": "USDC-BASE",
+   "usd_in": 1000,
+   "xno_received": 3073.411764705882,
+   "err": null,
+   "limits_in": {
+    "min": 0.14098,
+    "max": 3227.7292064304975
+   },
+   "buy_cost_pct_vs_cg": 0.96,
+   "buy_cost_pct_vs_binance_mid": 2.42,
+   "round_trip_usd_back": 949.630712,
+   "round_trip_loss_pct": 5.04
+  },
+  {
+   "pair": "USDT-BSC",
+   "usd_in": 1,
+   "xno_received": 2.7038165817508104,
+   "err": null,
+   "limits_in": {
+    "min": 0.2477243,
+    "max": 3426.1007205089813
+   },
+   "buy_cost_pct_vs_cg": 12.87,
+   "buy_cost_pct_vs_binance_mid": 14.15,
+   "round_trip_usd_back": 0.7402665,
+   "round_trip_loss_pct": 25.97
+  },
+  {
+   "pair": "USDT-BSC",
+   "usd_in": 10,
+   "xno_received": 30.265255519530648,
+   "err": null,
+   "limits_in": {
+    "min": 0.2477243,
+    "max": 3426.1007205089813
+   },
+   "buy_cost_pct_vs_cg": 2.47,
+   "buy_cost_pct_vs_binance_mid": 3.91,
+   "round_trip_usd_back": 9.2425741,
+   "round_trip_loss_pct": 7.57
+  },
+  {
+   "pair": "USDT-BSC",
+   "usd_in": 100,
+   "xno_received": 306.83958622819205,
+   "err": null,
+   "limits_in": {
+    "min": 0.2477243,
+    "max": 3426.1007205089813
+   },
+   "buy_cost_pct_vs_cg": 1.12,
+   "buy_cost_pct_vs_binance_mid": 2.58,
+   "round_trip_usd_back": 94.7785,
+   "round_trip_loss_pct": 5.22
+  },
+  {
+   "pair": "USDT-BSC",
+   "usd_in": 1000,
+   "xno_received": 3070.3412073490813,
+   "err": null,
+   "limits_in": {
+    "min": 0.2477243,
+    "max": 3426.1007205089813
+   },
+   "buy_cost_pct_vs_cg": 1.06,
+   "buy_cost_pct_vs_binance_mid": 2.52,
+   "round_trip_usd_back": 949.8268,
+   "round_trip_loss_pct": 5.02
+  }
+ ],
+ "binance_book_buy": [
+  {
+   "usd": 1,
+   "xno_bought_book_only": 3.144654088050314,
+   "slippage_pct_vs_mid": 0.157,
+   "binance_taker_fee_pct_vip0": 0.1,
+   "all_in_pct_excl_withdrawal": 0.257
+  },
+  {
+   "usd": 10,
+   "xno_bought_book_only": 31.446540880503143,
+   "slippage_pct_vs_mid": 0.157,
+   "binance_taker_fee_pct_vip0": 0.1,
+   "all_in_pct_excl_withdrawal": 0.257
+  },
+  {
+   "usd": 100,
+   "xno_bought_book_only": 314.4654088050314,
+   "slippage_pct_vs_mid": 0.157,
+   "binance_taker_fee_pct_vip0": 0.1,
+   "all_in_pct_excl_withdrawal": 0.257
+  },
+  {
+   "usd": 1000,
+   "xno_bought_book_only": 3144.6540880503144,
+   "slippage_pct_vs_mid": 0.157,
+   "binance_taker_fee_pct_vip0": 0.1,
+   "all_in_pct_excl_withdrawal": 0.257
+  }
+ ],
+ "sources": [
+  "https://api.coingecko.com/api/v3/simple/price?ids=nano&vs_currencies=usd",
+  "https://api.nanswap.com/get-estimate",
+  "https://api.binance.com/api/v3/depth?symbol=XNOUSDT&limit=1000"
+ ]
+}
