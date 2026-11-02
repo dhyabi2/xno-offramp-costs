@@ -73,3 +73,7 @@ A rough all-in for a $100 sale on a Binance-type venue is therefore 0.1% fee + ~
 ## Files
 - `data/nanswap-2026-11-02.json`, `data/depth-2026-11-02.json`, `data/kucoin-currency-XNO-2026-11-02.json` raw measurements
 - `measure.py`, `depth.py` re-run to refresh; `gen_readme.py` regenerates this page
+
+## Payout floor calculator
+
+`payout-floor/` computes what a payout keeps after an off-ramp minimum and these measured spreads: `python3 payout-floor/payout_floor.py --payout-xno 0.03 --min-credit-xno 0.1`. Stdlib, 17 tests.

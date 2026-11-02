@@ -1,0 +1,47 @@
+[
+ {
+  "id": "nanswap-xno-usdcbase-1usd-2026-11-02",
+  "pair": "XNO->USDC-BASE",
+  "size_raw": "3073600000000000000000000000000",
+  "received_raw": "687714",
+  "mid_raw": "325352",
+  "observed_at": "2026-11-02T06:10:00Z",
+  "source": "https://github.com/dhyabi2/xno-offramp-costs/blob/main/data/nanswap-2026-11-02.json"
+ },
+ {
+  "id": "nanswap-xno-usdcbase-5usd-2026-11-02",
+  "pair": "XNO->USDC-BASE",
+  "size_raw": "15368000000000000000000000000000",
+  "received_raw": "4518349",
+  "mid_raw": "325352",
+  "observed_at": "2026-11-02T06:10:00Z",
+  "source": "https://github.com/dhyabi2/xno-offramp-costs/blob/main/data/nanswap-2026-11-02.json"
+ },
+ {
+  "id": "nanswap-xno-usdcbase-25usd-2026-11-02",
+  "pair": "XNO->USDC-BASE",
+  "size_raw": "76839900000000000000000000000000",
+  "received_raw": "23671497",
+  "mid_raw": "325352",
+  "observed_at": "2026-11-02T06:10:00Z",
+  "source": "https://github.com/dhyabi2/xno-offramp-costs/blob/main/data/nanswap-2026-11-02.json"
+ },
+ {
+  "id": "nanswap-xno-usdcbase-100usd-2026-11-02",
+  "pair": "XNO->USDC-BASE",
+  "size_raw": "307359400000000000000000000000000",
+  "received_raw": "95639992",
+  "mid_raw": "325352",
+  "observed_at": "2026-11-02T06:10:00Z",
+  "source": "https://github.com/dhyabi2/xno-offramp-costs/blob/main/data/nanswap-2026-11-02.json"
+ },
+ {
+  "id": "nanswap-xno-usdcbase-250usd-2026-11-02",
+  "pair": "XNO->USDC-BASE",
+  "size_raw": "768398500000000000000000000000000",
+  "received_raw": "239489896",
+  "mid_raw": "325352",
+  "observed_at": "2026-11-02T06:10:00Z",
+  "source": "https://github.com/dhyabi2/xno-offramp-costs/blob/main/data/nanswap-2026-11-02.json"
+ }
+]
