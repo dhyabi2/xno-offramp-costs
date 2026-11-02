@@ -69,6 +69,11 @@ class Order(unittest.TestCase):
         r = self.run_order(self.ORDER)
         self.assertEqual((r["verdict"], r["direction"]), ("verified", "usdc->xno"))
 
+    def test_quote_vs_delivered_is_reported(self):
+        r = self.run_order(dict(self.ORDER, expectedAmountTo=7.0, amountTo=6.3))
+        self.assertAlmostEqual(r["quote_vs_delivered_pct"], -10.0, places=3)
+        self.assertIsNone(self.run_order(self.ORDER)["quote_vs_delivered_pct"])        # no expected amount on the order: not guessed
+
     def test_order_not_completed_is_unknown(self):
         self.assertEqual(self.run_order(dict(self.ORDER, status="waiting"))["verdict"], "unknown")
         self.assertEqual(self.run_order({"error": "Transaction doesn't exist"})["verdict"], "unknown")

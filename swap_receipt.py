@@ -114,7 +114,15 @@ def receipt_from_order(order_id, post=post, get=get_json):
     r = receipt(xno_block or "", usdc_tx or "", usdc_to or "", None, order_id, post)
     r["direction"] = direction
     r["order"] = {k: o.get(k) for k in ("id", "from", "fromNetwork", "to", "amountFrom", "amountTo", "payinHash",
-                                         "payoutHash", "payinAddress", "payoutAddress", "createdAt", "updatedAt")}
+                                         "payoutHash", "payinAddress", "payoutAddress", "createdAt", "updatedAt",
+                                         "expectedAmountFrom", "expectedAmountTo")}
+    # "firm or indicative": the order carries the estimate it was created with beside what it finally paid (Nanswap's docs call
+    # expectedAmountTo an "estimated value"). Negative = the order paid less than the estimate promised.
+    try:
+        exp, got = float(o["expectedAmountTo"]), float(o["amountTo"])
+        r["quote_vs_delivered_pct"] = round((got / exp - 1) * 100, 3) if exp > 0 else None
+    except (KeyError, TypeError, ValueError):
+        r["quote_vs_delivered_pct"] = None
     leg = r["usdc_leg"]
     if leg.get("ok") and min_usdc is not None and leg["usdc"] + 1e-6 < float(min_usdc):
         leg["ok"], leg["state"], leg["why"] = False, "wrong", "USDC moved is below the order's own amount"
