@@ -1,0 +1,111 @@
+{
+ "measured_at": "2026-11-02T11:23Z",
+ "coingecko_usd": 0.322047,
+ "rows": [
+  {
+   "provider": "Nanswap swap (USDC-BASE)",
+   "usd": 1,
+   "xno": 2.8697346446465017,
+   "buy_cost_pct": 7.58,
+   "round_trip_loss_pct": 36.48
+  },
+  {
+   "provider": "Nanswap swap (USDC-BASE)",
+   "usd": 25,
+   "xno": 76.61159769901651,
+   "buy_cost_pct": 1.31,
+   "round_trip_loss_pct": 6.57
+  },
+  {
+   "provider": "Nanswap swap (USDC-BASE)",
+   "usd": 100,
+   "xno": 307.6309766808931,
+   "buy_cost_pct": 0.93,
+   "round_trip_loss_pct": 5.33
+  },
+  {
+   "provider": "Binance XNO/USDT book",
+   "usd": 1,
+   "xno": 3.144654088050314,
+   "buy_cost_pct": -1.27,
+   "round_trip_loss_pct": 0.63
+  },
+  {
+   "provider": "Binance XNO/USDT book",
+   "usd": 25,
+   "xno": 78.61635220125785,
+   "buy_cost_pct": -1.27,
+   "round_trip_loss_pct": 0.63
+  },
+  {
+   "provider": "Binance XNO/USDT book",
+   "usd": 100,
+   "xno": 314.4654088050314,
+   "buy_cost_pct": -1.27,
+   "round_trip_loss_pct": 0.63
+  },
+  {
+   "provider": "KuCoin XNO/USDT book",
+   "usd": 1,
+   "xno": 3.149606299212598,
+   "buy_cost_pct": -1.43,
+   "round_trip_loss_pct": 0.76
+  },
+  {
+   "provider": "KuCoin XNO/USDT book",
+   "usd": 25,
+   "xno": 78.74015748031496,
+   "buy_cost_pct": -1.43,
+   "round_trip_loss_pct": 0.76
+  },
+  {
+   "provider": "KuCoin XNO/USDT book",
+   "usd": 100,
+   "xno": 314.23276036375034,
+   "buy_cost_pct": -1.2,
+   "round_trip_loss_pct": 0.99
+  },
+  {
+   "provider": "Kraken NANO/USD book",
+   "usd": 1,
+   "xno": 3.072866892624812,
+   "buy_cost_pct": 1.04,
+   "round_trip_loss_pct": 0.67
+  },
+  {
+   "provider": "Kraken NANO/USD book",
+   "usd": 25,
+   "xno": 76.8216723156203,
+   "buy_cost_pct": 1.04,
+   "round_trip_loss_pct": 0.67
+  },
+  {
+   "provider": "Kraken NANO/USD book",
+   "usd": 100,
+   "xno": 307.2866892624812,
+   "buy_cost_pct": 1.04,
+   "round_trip_loss_pct": 0.67
+  },
+  {
+   "provider": "Gate NANO/USDT book",
+   "usd": 1,
+   "xno": 3.0911901081916535,
+   "buy_cost_pct": 0.45,
+   "round_trip_loss_pct": 2.75
+  },
+  {
+   "provider": "Gate NANO/USDT book",
+   "usd": 25,
+   "xno": 77.27975270479135,
+   "buy_cost_pct": 0.45,
+   "round_trip_loss_pct": 2.77
+  },
+  {
+   "provider": "Gate NANO/USDT book",
+   "usd": 100,
+   "xno": 309.1190108191654,
+   "buy_cost_pct": 0.45,
+   "round_trip_loss_pct": 2.78
+  }
+ ]
+}

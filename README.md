@@ -79,3 +79,5 @@ A rough all-in for a $100 sale on a Binance-type venue is therefore 0.1% fee + ~
 ## Payout floor calculator
 
 `payout-floor/` computes what a payout keeps after an off-ramp minimum and these measured spreads: `python3 payout-floor/payout_floor.py --payout-xno 0.03 --min-credit-xno 0.1`. Stdlib, 17 tests.
+
+- Swap vs four exchange books at 1/25/100 USD, with the round trip: [SWAP-COMPARE.md](SWAP-COMPARE.md) (`compare_providers.py`).
